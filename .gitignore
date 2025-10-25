@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.vscode/
+*.idea/
+.env
+.venv/
+env/
+venv/
+*.log
+main.lox
