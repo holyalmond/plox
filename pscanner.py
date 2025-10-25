@@ -74,7 +74,7 @@ class Scanner:
             case _: 
                 if self.is_digit(ch):
                     self.number()
-                elif self.is_alpha(ch):
+                elif self.is_alpha(ch) or ch == '_':
                     self.identifier()
                 else:
                     #Lox.error(self.line, "Unexpected character.")
@@ -136,7 +136,7 @@ class Scanner:
         return self.source[self.current + 1]
     
     def is_alpha(self, ch):
-        return (ch >= 'a' and ch <= 'z') or (ch >= 'A' and ch <= 'Z') or ch == '_'
+        return (ch >= 'a' and ch <= 'z') or (ch >= 'A' and ch <= 'Z')
 
     def identifier(self):
         while self.is_alpha_numeric(self.peek()):
