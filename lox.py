@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from pscanner import Scanner
+from scanner import Scanner
 
 class Lox():
     def __init__(self):

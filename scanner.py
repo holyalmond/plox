@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List
-from ptoken.token import Token
-from ptoken.token_type import TokenType
+from tokens import Token
+from token_type import TokenType
 
 @dataclass
 class Scanner:
@@ -12,22 +12,22 @@ class Scanner:
     line: int = 1
 
     keywords = {
-        "and":    "AND",
-        "class":  "CLASS",
-        "else":   "ELSE",
-        "false":  "FALSE",
-        "for":    "FOR",
-        "fun":    "FUN",
-        "if":     "IF",
-        "nil":    "NIL",
-        "or":     "OR",
-        "print":  "PRINT",
-        "return": "RETURN",
-        "super":  "SUPER",
-        "this":   "THIS",
-        "true":   "TRUE",
-        "var":    "VAR",
-        "while":  "WHILE",
+        "and":   TokenType.AND,
+        "class":  TokenType.CLASS,
+        "else":   TokenType.ELSE,
+        "false":  TokenType.FALSE,
+        "for":    TokenType.FOR,
+        "fun":    TokenType.FUN,
+        "if":     TokenType.IF,
+        "nil":    TokenType.NIL,
+        "or":     TokenType.OR,
+        "print":  TokenType.PRINT,
+        "return": TokenType.RETURN,
+        "super":  TokenType.SUPER,
+        "this":   TokenType.THIS,
+        "true":   TokenType.TRUE,
+        "var":    TokenType.VAR,
+        "while":  TokenType.WHILE,
     }
 
     def scan_tokens(self):
