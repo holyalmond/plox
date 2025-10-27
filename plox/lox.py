@@ -12,11 +12,11 @@ class Lox():
             print("Usage: plox [script]")
             sys.exit(64)
         elif length == 1:
-            self.runFile(args[0])
+            self.run_file(args[0])
         else:
-            self.runPrompt()
+            self.run_prompt()
 
-    def runFile(self, path: str):
+    def run_file(self, path: str):
         p = Path(path)
         if not p.exists():
             raise FileNotFoundError
@@ -24,7 +24,7 @@ class Lox():
 
         if self.hadError: sys.exit(65)
 
-    def runPrompt(self):
+    def run_prompt(self):
         while True:
             line = input("> ")
             if not line: break
